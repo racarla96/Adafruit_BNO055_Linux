@@ -207,7 +207,7 @@ void Adafruit_BNO055::setAxisSign(adafruit_bno055_axis_remap_sign_t remapsign) {
  *  @param  usextal
  *          use external crystal boolean
  */
-void Adafruit_BNO055::setExtCrystalUse(boolean usextal) {
+void Adafruit_BNO055::setExtCrystalUse(bool usextal) {
   adafruit_bno055_opmode_t modeback = _mode;
 
   /* Switch to config mode (just in case since this is the default) */
@@ -829,6 +829,6 @@ uint8_t Adafruit_BNO055::read8(adafruit_bno055_reg_t reg) {
  */
 bool Adafruit_BNO055::readLen(adafruit_bno055_reg_t reg, uint8_t *buffer,
                               uint8_t len) {
-  if(!_i2c->writeReg((uint8_t) reg, &buffer, len)) return false; // Error reading                              
+  if(!_i2c->writeReg((uint8_t) reg, buffer, len)) return false; // Error reading                              
   return true;
 }
