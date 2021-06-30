@@ -823,7 +823,7 @@ bool Adafruit_BNO055::write8(adafruit_bno055_reg_t reg, uint8_t value) {
  */
 uint8_t Adafruit_BNO055::read8(adafruit_bno055_reg_t reg) {
   uint8_t value;
-  if(!_i2c->writeReg((uint8_t) reg, &value, 1)) return 0; // Error reading
+  if(!_i2c->readReg((uint8_t) reg, &value, 1)) return 0; // Error reading
   return value;
 }
 
@@ -832,6 +832,6 @@ uint8_t Adafruit_BNO055::read8(adafruit_bno055_reg_t reg) {
  */
 bool Adafruit_BNO055::readLen(adafruit_bno055_reg_t reg, uint8_t *buffer,
                               uint8_t len) {
-  if(!_i2c->writeReg((uint8_t) reg, buffer, len)) return false; // Error reading                              
+  if(!_i2c->readReg((uint8_t) reg, buffer, len)) return false; // Error reading                              
   return true;
 }
