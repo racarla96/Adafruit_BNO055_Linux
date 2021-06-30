@@ -1,2 +1,6 @@
 REGEX
-Serial.println\(F\((.*)\)\);
+Serial.println\(F\((.*)\)\); -> cout << $1 << endl;
+Serial.println\((.*)\); -> cout << $1 << endl;
+Serial.print\((.*)\); -> cout << $1;
+Serial.println(""); -> cout << endl;
+delay\((.*)\); -> usleep($1 * 1000);

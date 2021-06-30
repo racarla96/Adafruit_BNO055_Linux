@@ -1,0 +1,2 @@
+
+g++ rawdata.cpp ../../Adafruit_BNO055.cpp ../../../Adafruit_Sensor_Linux/Adafruit_Sensor.cpp -I ../../../Adafruit_Sensor_Linux/ -I ../../.  -o rawdata -li2cpp
