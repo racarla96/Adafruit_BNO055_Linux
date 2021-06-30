@@ -74,7 +74,7 @@ bool Adafruit_BNO055::begin(adafruit_bno055_opmode_t mode) {
 
   /* Make sure we have the right device */
   uint8_t id = read8(BNO055_CHIP_ID_ADDR);
-  cout << "Chip id 0x" << std::hex << unsigned(id) << " vs 0x" << BNO055_ID << endl;
+  //cout << "Chip id 0x" << std::hex << unsigned(id) << " vs 0x" << BNO055_ID << endl;
   if (id != BNO055_ID) {
     usleep(1000 * 1000); // hold on for boot
     id = read8(BNO055_CHIP_ID_ADDR);
@@ -82,8 +82,6 @@ bool Adafruit_BNO055::begin(adafruit_bno055_opmode_t mode) {
       return false; // still not? ok bail
     }
   }
-
-  cout << "Hola" << endl;
 
   /* Switch to config mode (just in case since this is the default) */
   setMode(OPERATION_MODE_CONFIG);
