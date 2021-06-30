@@ -811,14 +811,14 @@ void Adafruit_BNO055::enterNormalMode() {
 /*!
  *  @brief  Writes an 8 bit value over I2C
  */
-bool Adafruit_BNO055::write8(adafruit_bno055_reg_t reg, byte value) {
+bool Adafruit_BNO055::write8(adafruit_bno055_reg_t reg, uint8_t value) {
   return _i2c->writeReg((uint8_t) reg, &value, 1);
 }
 
 /*!
  *  @brief  Reads an 8 bit value over I2C
  */
-byte Adafruit_BNO055::read8(adafruit_bno055_reg_t reg) {
+uint8_t Adafruit_BNO055::read8(adafruit_bno055_reg_t reg) {
   uint8_t value;
   if(!_i2c->writeReg((uint8_t) reg, &value, 1)) return 0; // Error reading
   return value;
@@ -827,7 +827,7 @@ byte Adafruit_BNO055::read8(adafruit_bno055_reg_t reg) {
 /*!
  *  @brief  Reads the specified number of bytes over I2C
  */
-bool Adafruit_BNO055::readLen(adafruit_bno055_reg_t reg, byte *buffer,
+bool Adafruit_BNO055::readLen(adafruit_bno055_reg_t reg, uint8_t *buffer,
                               uint8_t len) {
   if(!_i2c->writeReg((uint8_t) reg, &buffer, len)) return false; // Error reading                              
   return true;

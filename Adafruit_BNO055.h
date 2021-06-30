@@ -316,9 +316,9 @@ public:
   void enterNormalMode();
 
 private:
-  byte read8(adafruit_bno055_reg_t);
-  bool readLen(adafruit_bno055_reg_t, byte *buffer, uint8_t len);
-  bool write8(adafruit_bno055_reg_t, byte value);
+  uint8_t read8(adafruit_bno055_reg_t);
+  bool readLen(adafruit_bno055_reg_t, uint8_t *buffer, uint8_t len);
+  bool write8(adafruit_bno055_reg_t, uint8_t value);
 
   int _bus;
   uint8_t _address;
