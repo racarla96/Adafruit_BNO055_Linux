@@ -22,8 +22,10 @@
 #ifndef __ADAFRUIT_BNO055_H__
 #define __ADAFRUIT_BNO055_H__
 
-#include "Arduino.h"
-#include <Wire.h>
+#include <iostream>
+using namespace std;
+
+#include <i2cpp.h>
 
 #include "utility/imumaths.h"
 #include <Adafruit_Sensor.h>
@@ -280,8 +282,7 @@ public:
     VECTOR_GRAVITY = BNO055_GRAVITY_DATA_X_LSB_ADDR
   } adafruit_vector_type_t;
 
-  Adafruit_BNO055(int32_t sensorID = -1, uint8_t address = BNO055_ADDRESS_A,
-                  TwoWire *theWire = &Wire);
+  Adafruit_BNO055(int32_t sensorID = -1, uint8_t address = BNO055_ADDRESS_A, int bus);
 
   bool begin(adafruit_bno055_opmode_t mode = OPERATION_MODE_NDOF);
   void setMode(adafruit_bno055_opmode_t mode);
@@ -319,8 +320,9 @@ private:
   bool readLen(adafruit_bno055_reg_t, byte *buffer, uint8_t len);
   bool write8(adafruit_bno055_reg_t, byte value);
 
+  int _bus;
   uint8_t _address;
-  TwoWire *_wire;
+  i2cpp * _i2c;
 
   int32_t _sensorID;
   adafruit_bno055_opmode_t _mode;
