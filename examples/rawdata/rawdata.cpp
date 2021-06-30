@@ -102,13 +102,13 @@ void loop(void)
   uint8_t system, gyro, accel, mag = 0;
   bno->getCalibration(&system, &gyro, &accel, &mag);
   cout << "CALIBRATION: Sys=";
-  cout << system, DEC;
+  cout << unsigned(system);
   cout << " Gyro=";
-  cout << gyro, DEC;
+  cout << unsigned(gyro);
   cout << " Accel=";
-  cout << accel, DEC;
+  cout << unsigned(accel);
   cout << " Mag=";
-  cout << mag, DEC << endl;
+  cout << unsigned(mag) << endl;
 
   usleep(BNO055_SAMPLERATE_DELAY_MS * 1000);
 }
@@ -117,7 +117,7 @@ void loop(void)
  
 int main(int argc, char *argv[])
 {
-  bno = Adafruit_BNO055(-1, 0x29, 1);
+  bno = new Adafruit_BNO055(-1, 0x29, 1);
   setup();
   for(int i = 0; i < 10; i++) loop();
   return 0;
