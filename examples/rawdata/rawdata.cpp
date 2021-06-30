@@ -53,7 +53,7 @@ void setup(void)
   cout << " C" << endl;
   cout << endl;
 
-  bno->setExtCrystalUse(true);
+  //bno->setExtCrystalUse(true);
 
   cout << "Calibration status values: 0=uncalibrated, 3=fully calibrated" << endl;
 }
