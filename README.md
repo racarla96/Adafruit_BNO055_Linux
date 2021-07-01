@@ -11,7 +11,7 @@ To work with the Arduino Zero, the BNO055's ADR pin must be high.
 
 ## What is the Adafruit Unified Sensor Library? ##
 
-The Adafruit Unified Sensor Library ([Adafruit_Sensor](https://github.com/adafruit/Adafruit_Sensor)) provides a common interface and data type for any supported sensor.  It defines some basic information about the sensor (sensor limits, etc.), and returns standard SI units of a specific type and scale for each supported sensor type.
+The Adafruit Unified Sensor Library ([Adafruit_Sensor for Linux](https://github.com/racarla96/Adafruit_Sensor_Linux)) provides a common interface and data type for any supported sensor.  It defines some basic information about the sensor (sensor limits, etc.), and returns standard SI units of a specific type and scale for each supported sensor type.
 
 It provides a simple abstraction layer between your application and the actual sensor HW, allowing you to drop in any comparable sensor with only one or two lines of code to change in your project (essentially the constructor since the functions to read sensor data and get information about the sensor are defined in the base Adafruit_Sensor class).
 
