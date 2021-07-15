@@ -9,6 +9,10 @@ Tested and works great with the Adafruit Si4713 Breakout Board.
 To work with the Arduino Zero, the BNO055's ADR pin must be high.
 * http://www.adafruit.com/products/2472
 
+## Using with Linux
+
+You need to install the library https://github.com/racarla96/I2CPP
+
 ## What is the Adafruit Unified Sensor Library? ##
 
 The Adafruit Unified Sensor Library ([Adafruit_Sensor for Linux](https://github.com/racarla96/Adafruit_Sensor_Linux)) provides a common interface and data type for any supported sensor.  It defines some basic information about the sensor (sensor limits, etc.), and returns standard SI units of a specific type and scale for each supported sensor type.
